@@ -258,11 +258,11 @@ input.onButtonPressed(Button.A, function () {
 input.onGesture(Gesture.Shake, function () {
     radio.sendNumber(100)
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    radio.sendNumber(Bla)
-})
 input.onButtonPressed(Button.B, function () {
     Bla += 1
+})
+input.onLogoEvent(TouchButtonEvent.Released, function () {
+    radio.sendNumber(Bla)
 })
 let Bla = 0
 radio.setGroup(2007)
