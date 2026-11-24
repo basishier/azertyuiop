@@ -242,9 +242,21 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
     }
+    if (receivedNumber == 100) {
+        basic.showLeds(`
+            . # . # .
+            # # # # #
+            . # . # .
+            # # # # #
+            . # . # .
+            `)
+    }
 })
 input.onButtonPressed(Button.A, function () {
     Bla += -1
+})
+input.onGesture(Gesture.Shake, function () {
+    radio.sendNumber(100)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(Bla)
